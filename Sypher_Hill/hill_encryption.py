@@ -20,4 +20,4 @@ vector_1m = np.array(vector_1, int).reshape(int(lenn/2), 2).transpose()
 
 result = np.dot(mass_1m, vector_1m)
 
-print("Ответ: ",(result%26).flatten())
+print("Ответ: ",(result%26).transpose().flatten())
