@@ -5,6 +5,7 @@ len = int(input("Введите количество элементов: "))
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("--W(Супервозрастающая последовательность)--")
 
+#W, r, q - секретный ключ
 #Ввод списка w
 mass_w = []
 for i in range(len):
@@ -18,7 +19,7 @@ for i in range(len):
 
 #Ввод числа q
 while True:
-    q = int(input("Введите q(Больше суммы w): "))
+    q = int(input("Введите q(Больше суммы w = {}): ".format(sum(mass_w))))
     if q > sum(mass_w):
         break
     else:
@@ -26,7 +27,7 @@ while True:
 
 #Ввод чисала r
 while True:
-    r = int(input("Введите r([1, q): "))
+    r = int(input("Введите r([1, q = {}): ". format(q)))
     if 1 < r < q:
         break
     else:
@@ -43,7 +44,6 @@ for i in range(len):
             break
         else:
             print("Значение не двоичное.")
-print(mass_code)
 
 #Формирование открытого ключа
 def open_key(w, q, r):
@@ -62,4 +62,5 @@ def for_user(bin, mass):
     return sum(mess)
 
 result = for_user(mass_code, op_key)
+print("Открытый ключ: ",op_key)
 print("Сообщение: ", result)
