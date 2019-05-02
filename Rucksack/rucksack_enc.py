@@ -1,4 +1,4 @@
-print("PR2 Rucksack_enc")
+print("PR2 Rucksack_ENC")
 
 len = int(input("Введите количество элементов: "))
 
@@ -27,7 +27,7 @@ while True:
 
 #Ввод чисала r
 while True:
-    r = int(input("Введите r([1, q = {}): ". format(q)))
+    r = int(input("Введите r([1, q = {}))(НОД r,q = 1): ". format(q)))
     if 1 < r < q:
         break
     else:
@@ -44,6 +44,7 @@ for i in range(len):
             break
         else:
             print("Значение не двоичное.")
+print("Сообщение для проверки: ",mass_code)
 
 #Формирование открытого ключа
 def open_key(w, q, r):
