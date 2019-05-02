@@ -14,7 +14,6 @@ for i in range(4):
     mass_1.append(int(input("Введите матрицу(4): ")))
 mass_1m = np.array(mass_1, int).reshape(2,2)
 
-print(mass_1m)
 lenn = int(input("Введите количество букв(x2): "))
 
 #Введение векторов.
@@ -22,11 +21,9 @@ vector_1 = []
 for i in range(lenn):
     vector_1.append(int(input("Введите вектор:")))
 vector_1m = np.array(vector_1, int).reshape(int(lenn/2), 2).transpose()
-print(vector_1m)
 
 #Нахождение детерминанта.
 determinat = int(round(np.linalg.det(mass_1m)))
-print(determinat)
 
 #Алгоритм Эвклида.
 def nod_evcl(det, alf):
@@ -38,21 +35,19 @@ def nod_evcl(det, alf):
     return det + alf
 
 nod = nod_evcl(determinat, alphabet)
-print(nod)
 
 #Нахождение x из алгоритма Эвклида.
 def find_x(det, x):
     for i in range(-10, 10):
-        if (determinat * i) % 26 == x:
+        if (det * i) % 26 == x:
             return i
             break
         else:
             i += 1
 
 x = find_x(determinat, nod)
-print(x)
 
-#???
+#Корекция x
 def new_x(det, x):
     if (det < 0 and x > 0) or (det > 0 and x > 0):
         return x
@@ -62,7 +57,6 @@ def new_x(det, x):
         return -x
 
 x1 = new_x(determinat, x)
-print(x1)
 
 #Матрица алгебраических дополнений. Умножение на детерминант и транспонирование матрицы.
 def mat_alg(x1, alf):
@@ -74,7 +68,6 @@ def mat_alg(x1, alf):
 
 final_mass = mat_alg(x1, alphabet)
 
-print(final_mass)
 #Умножение матрицы на вектор
 result = np.dot(final_mass, vector_1m)
 
