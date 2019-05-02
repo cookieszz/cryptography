@@ -47,7 +47,7 @@ def find_x(det, x):
 
 x = find_x(determinat, nod)
 
-#Корекция x
+#Корекция x.
 def new_x(det, x):
     if (det < 0 and x > 0) or (det > 0 and x > 0):
         return x
