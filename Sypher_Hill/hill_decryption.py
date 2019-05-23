@@ -37,9 +37,9 @@ def nod_evcl(det, alf):
 nod = nod_evcl(determinat, alphabet)
 
 #Нахождение x из алгоритма Эвклида.
-def find_x(det, x):
-    for i in range(-10, 10):
-        if (det * i) % 26 == x:
+def find_x(det, nod):
+    for i in range(-12, 13):
+        if (det * i) % 26 == nod:
             return i
             break
         else:
