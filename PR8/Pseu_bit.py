@@ -9,10 +9,13 @@ while True:
         break
     else:
         print('Неверное число!')
+
 #Введение q
 while True:
-    q = int(input("Введите q(p = q = 3(mod 4)): "))
-    if q % 4 == 3:
+    q = int(input("Введите q(p = q = 3(mod 4), p != q): "))
+    if p == q:
+        print('Неверное число!')
+    elif q % 4 == 3:
         break
     else:
         print('Неверное число!')
@@ -23,7 +26,7 @@ number_bin = int(input('Введите количество битов: '))
 n = p * q
 
 #Ввод r
-r = int(input('Введите r, nod(r, n) = 1 :'))
+r = int(input('Введите r, nod(r, n) = 1 : '))
 
 #Начальное значение последовательности
 x0 = (r ** 2) % n
@@ -45,4 +48,5 @@ def random_bin(x, n, number_bin):
         return 0
 
 result  = random_bin(x0, n, number_bin)
-print("последовательность битов: ", mass_bin)
+z = ''.join(mass_bin)
+print("Последовательность битов:", z)
